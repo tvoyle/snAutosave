@@ -4,6 +4,6 @@
   "Author": "Dingo",
   "Version": "1.4.0",
   "Enable": true,
-  "Game": "Subnautica",
+  "Game": "BelowZero",
   "AssemblyName": "SubnauticaAutosave.dll"
 }

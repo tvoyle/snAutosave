@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Harmony;
+using HarmonyLib;
 
 namespace SubnauticaAutosave
 {
@@ -35,10 +35,10 @@ namespace SubnauticaAutosave
 
 		internal static void InitializeHarmony()
 		{
-			HarmonyInstance harmony = HarmonyInstance.Create("dingo.snAutosave");
+			Harmony harmony =  new Harmony("dingo.snAutosave");
 
 #if DEBUG
-			HarmonyInstance.DEBUG = true;
+			Harmony.DEBUG = true;
 
 			// Detour menu saves for testing purposes
 			MethodInfo ingameMenuSaveGame = AccessTools.Method(typeof(IngameMenu), nameof(IngameMenu.SaveGame));

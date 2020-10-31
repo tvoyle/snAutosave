@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -207,7 +208,7 @@ namespace SubnauticaAutosave
 
 			if (!hardcoreMode)
 			{
-				SaveLoadManager.main.SetCurrentSlot(autosaveSlot);
+				SaveLoadManager.main.SetCurrentSlot(autosaveSlot, (SaveLoadManager.StoryVersion)SaveLoadManager.main.GetGameInfo(cachedSaveSlot).storyVersion);
 			}
 
 #if DEBUG
@@ -232,7 +233,7 @@ namespace SubnauticaAutosave
 				Entry.LogMessage($"Copied screenshots from {cachedSaveSlot} to {autosaveSlot}");
 #endif
 
-				SaveLoadManager.main.SetCurrentSlot(cachedSaveSlot);
+				SaveLoadManager.main.SetCurrentSlot(cachedSaveSlot, (SaveLoadManager.StoryVersion)SaveLoadManager.main.GetGameInfo(cachedSaveSlot).storyVersion);
 				this.lastUsedAutosaveName = autosaveSlot;
 			}
 
