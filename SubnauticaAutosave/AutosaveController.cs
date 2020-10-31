@@ -208,7 +208,7 @@ namespace SubnauticaAutosave
 
 			if (!hardcoreMode)
 			{
-				SaveLoadManager.main.SetCurrentSlot(autosaveSlot, (SaveLoadManager.StoryVersion)SaveLoadManager.main.GetGameInfo(cachedSaveSlot).storyVersion);
+				SaveLoadManager.main.SetCurrentSlot(autosaveSlot, SaveLoadManager.StoryVersion.Reboot);
 			}
 
 #if DEBUG
@@ -233,7 +233,7 @@ namespace SubnauticaAutosave
 				Entry.LogMessage($"Copied screenshots from {cachedSaveSlot} to {autosaveSlot}");
 #endif
 
-				SaveLoadManager.main.SetCurrentSlot(cachedSaveSlot, (SaveLoadManager.StoryVersion)SaveLoadManager.main.GetGameInfo(cachedSaveSlot).storyVersion);
+				SaveLoadManager.main.SetCurrentSlot(cachedSaveSlot, SaveLoadManager.StoryVersion.Reboot);
 				this.lastUsedAutosaveName = autosaveSlot;
 			}
 
